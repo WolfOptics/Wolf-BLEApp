@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WolfAIOT BLE</title>
+	
+	<script src="./3rdPart/jquery.min.js"></script>
+	<link rel="stylesheet" href="./3rdPart/bootstrap.min.css">
+	<script src="./3rdPart/bootstrap.min.js"></script>
+ 
+	<link href="./3rdPart/bootstrap4-toggle.min.css" rel="stylesheet">
+	<script src="./3rdPart/bootstrap4-toggle.min.js"></script>
+	<script type="text/javascript" src="./3rdPart/loader.js"></script>
+	
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="./3rdPart/gauge.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+    <body>
+		<nav>
+			<img src="logo2.png" width="80px" height="80px" id=logo alt="Logo image" style="margin-left: 40px;" />
+			<h1> WOLF AIOT BLE API </h1>
+				<ul class="navigationbar">
+					<li><a href="index.html">Home</a></li>
+				</ul>
+    </nav>
+		<div class="button_ble" style="text-align:center;">
+			<button type="button" class="btn btn-info btn-lg" onclick="onStartButtonClick()">藍芽連線</button>
+		</div>
+		<br>
+		<div class="toggle_box" style="text-align:center;">
+			<label><input id="toggle_P1state" type="checkbox" class="input_toggle1" data-toggle="toggle" data-on="F1 ON" data-off="F1 OFF" 
+						data-onstyle="success" data-offstyle="danger" data-width="100" data-height="65"></label>
+			<label style="margin-left: 30px"></label>
+			<label><input id="toggle_P2state" type="checkbox" class="input_toggle2" data-toggle="toggle" data-on="F2 ON" data-off="F2 OFF" 
+		              data-onstyle="success" data-offstyle="danger" data-width="100" data-height="65"></label>
+		</div>
+		
+			<div class="card-grid">
+				<div class="card">
+				<p class="card-title">Temperature</p>
+				<canvas id="gauge-temperature"></canvas>
+				</div>
+				<div class="card">
+				<p class="card-title">Humidity</p>
+				<canvas id="gauge-humidity"></canvas>
+				</div>
+			</div>
+		
+		
+	
+   
+    
+
+    <script type="text/javascript">
+		<!-- prevent the right-click on a web page !-->
+		document.addEventListener("contextmenu", (e) => {
+			e.preventDefault();
+		}, false);
+		<!-- prevents the shortcut key !-->
+		document.addEventListener("keydown", (e) => {
+			if (e.ctrlKey || e.keyCode==123) {
+			e.stopPropagation();
+			e.preventDefault();
+			}
+		});
+	
+	
+		<!-- hide the JavaScript code !-->
+		let scriptElement = document.createElement("script");
+		scriptElement.type = "text/javascript";
+		scriptElement.src = "js/bleHiding.js";
+		document.body.appendChild(scriptElement);
+    </script>
+  </body>
+</html>
